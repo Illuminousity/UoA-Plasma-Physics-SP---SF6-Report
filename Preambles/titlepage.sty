@@ -1,0 +1,48 @@
+%To recognise @ as a letter
+\makeatletter
+
+\def\firstauthor#1{\gdef\@firstauthor{#1}}
+
+\def\firstID#1{\gdef\@firstID{#1}}
+
+\def\firstemail#1{\gdef\@firstemail{#1}}
+
+\def\submitdate#1{\gdef\@submitdate{#1}}
+
+
+
+\def\maketitle{
+    \begin{titlepage}
+    \centering
+    \vspace*{0.5 cm}
+    \includegraphics[scale = 0.075]{Figures/uoa.jpg}\\[1.0 cm]	% University Logo
+    \textsc{\LARGE University of Aberdeen}\\[2.0 cm]	% University Name
+	\textsc{\Large }\\[0.5 cm]				% Course Code
+	\textsc{\large OIPT Summer Project}\\[0.5 cm]				% Course Name
+	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	{ \huge \bfseries \@title}\\
+	\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+			\emph{Author:}\\
+			\@firstauthor\\
+                \@firstemail
+			\end{flushleft}
+			\end{minipage}~
+			\begin{minipage}{0.4\textwidth}
+			\begin{flushright} \large
+			\emph{Supervisor:} \\
+			Dr. Scott J. Doyle								% Your Student Number
+		\end{flushright}
+	\end{minipage}\\[2 cm]
+	
+
+ 
+	\vfill
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\end{titlepage}
+}
+%Refresh footnotes to be numbers
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\makeatother %Refresh @ 
